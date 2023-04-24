@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+input, select{
+    border-radius: 7px;
+}
+.btn {
+    border: 5px solid;
+    border-radius: 10px;
+}
+body{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+#pageTitle{
+    font-weight: bold;
+    font-size: 1.3em;
+}
