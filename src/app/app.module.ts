@@ -9,6 +9,11 @@ import { EmployeeDetailComponent } from './employee/employee-detail/employee-det
 import { EmployeeCreateComponent } from './employee/employee-create/employee-create.component';
 import { EmployeeChangeComponent } from './employee/employee-change/employee-change.component';
 import { EmployeeLoginComponent } from './employee/employee-login/employee-login.component';
+import { MenubarComponent } from './menu/menubar/menubar.component';
+import { OrderListComponent } from './order/order-list/order-list.component';
+import { OrderDetailComponent } from './order/order-detail/order-detail.component';
+import { OrderCreateComponent } from './order/order-create/order-create.component';
+import { OrderChangeComponent } from './order/order-change/order-change.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +22,12 @@ import { EmployeeLoginComponent } from './employee/employee-login/employee-login
     EmployeeDetailComponent,
     EmployeeCreateComponent,
     EmployeeChangeComponent,
-    EmployeeLoginComponent
+    EmployeeLoginComponent,
+    MenubarComponent,
+    OrderListComponent,
+    OrderDetailComponent,
+    OrderCreateComponent,
+    OrderChangeComponent
   ],
   imports: [
     BrowserModule,

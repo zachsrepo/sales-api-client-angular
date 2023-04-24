@@ -20,10 +20,14 @@ export class EmployeeLoginComponent {
     this.emplsvc.login(this.email, this.password).subscribe({
       next: (res) => {
         console.debug("Login Successful");
+        this.message = "Login Successful!";
         this.router.navigateByUrl("/employee/list");
       },
       error: (err) => {
         console.error(err);
+        if(err.status === 404){
+          this.message = "Login Failed / Email or Password Incorrect!"
+        }
       }
     })
   }
