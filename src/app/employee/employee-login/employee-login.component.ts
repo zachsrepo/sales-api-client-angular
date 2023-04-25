@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { EmployeeService } from '../employee.service';
 import { Router } from '@angular/router';
+import { SystemService } from 'src/app/system/system.service';
 
 @Component({
   selector: 'app-employee-login',
@@ -14,14 +15,17 @@ export class EmployeeLoginComponent {
   message: string = "";
   constructor(
     private emplsvc: EmployeeService,
-    private router: Router
+    private router: Router,
+    private sys: SystemService
   ) {}
   login() : void {
     this.emplsvc.login(this.email, this.password).subscribe({
       next: (res) => {
         console.debug("Login Successful");
         this.message = "Login Successful!";
+        this.sys.loggedInEmployee = res;
         this.router.navigateByUrl("/employee/list");
+        
       },
       error: (err) => {
         console.error(err);
@@ -32,6 +36,7 @@ export class EmployeeLoginComponent {
     })
   }
   ngOnInit(): void {
-
+    
+    this.sys.loggedInEmployee = null;
   }
 }

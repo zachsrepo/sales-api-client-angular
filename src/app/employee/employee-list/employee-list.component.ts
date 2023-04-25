@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { EmployeeService } from '../employee.service';
 import { Employee } from '../employee.class';
+import { SystemService } from 'src/app/system/system.service';
 
 @Component({
   selector: 'app-employee-list',
@@ -13,10 +14,18 @@ export class EmployeeListComponent {
   employees: Employee[] = [];
 
   constructor(
-    private emplsvc: EmployeeService
+    private emplsvc: EmployeeService,
+    private sys: SystemService
   ){}
 
   ngOnInit(): void {
+    this.sys.chkLogin();
+    if(this.sys.loggedInEmployee !== null){
+      console.log("someone is logged in");
+    }
+    else{
+      console.log("no one is logged in.")
+    }
     this.emplsvc.list().subscribe({
       next: (res) => {
         console.log("Employees:", res)
