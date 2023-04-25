@@ -28,7 +28,8 @@
                 <td>
                     <a routerLink="/order/detail/{{o.id}}">Detail</a> | 
                     <a routerLink="/order/change/{{o.id}}">Change</a> |
-                    <button (click)="review(o)" class="btn btn-link">Review</button>
+                    <button (click)="review(o)" class="btn btn-link">Review</button> |
+                    <a routerLink="/order/lines/{{o.id}}">Lines</a>
                 </td>
             </tr>
         </tbody>

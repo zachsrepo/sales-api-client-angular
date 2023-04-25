@@ -19,7 +19,7 @@ export class EmployeeListComponent {
   ){}
 
   ngOnInit(): void {
-    this.sys.chkLogin();
+   // this.sys.chkLogin();
     if(this.sys.loggedInEmployee !== null){
       console.log("someone is logged in");
     }

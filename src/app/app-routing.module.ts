@@ -9,6 +9,7 @@ import { OrderListComponent } from './order/order-list/order-list.component';
 import { OrderChangeComponent } from './order/order-change/order-change.component';
 import { OrderDetailComponent } from './order/order-detail/order-detail.component';
 import { OrderCreateComponent } from './order/order-create/order-create.component';
+import { OrderLinesComponent } from './order/order-lines/order-lines.component';
 const routes: Routes = [
   {path: "", redirectTo: "/employee/list", pathMatch: "full"},
   {path: "employee/list", component: EmployeeListComponent},
@@ -19,7 +20,9 @@ const routes: Routes = [
   {path: "order/list", component: OrderListComponent},
   {path: "order/detail/:id", component: OrderDetailComponent},
   {path: "order/change/:id", component: OrderChangeComponent},
-  {path: "order/create", component: OrderCreateComponent}
+  {path: "order/create", component: OrderCreateComponent},
+  {path: "order/lines/:id", component: OrderLinesComponent}
+
 
 
 ];
