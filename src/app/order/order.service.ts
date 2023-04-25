@@ -25,5 +25,8 @@ export class OrderService {
   create(order: Order): Observable<Order>{
     return this.http.post(`${this.baseurl}`, order) as Observable<Order>;
   }
+  change(order: Order, id: number): Observable<any>{
+    return this.http.put(`${this.baseurl}/${id}`, order) as Observable<any>;
+  }
 
 }

@@ -20,10 +20,10 @@
         <tbody>
             <tr *ngFor="let o of orders">
                 <td> {{o.id}}</td>
-                <td>{{o.date}}</td>
+                <td>{{o.date | date}}</td>
                 <td>{{o.description}}</td>
                 <td>{{o.status}}</td>
-                <td>{{o.total}}</td>
+                <td>{{o.total | currency}}</td>
                 <td>{{o.customer?.name}}</td>
                 <td>
                     <a routerLink="/order/detail/{{o.id}}">Detail</a> | 
