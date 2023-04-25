@@ -33,4 +33,30 @@
             </tr>
         </tbody>
     </table>
+    <a routerLink="/orderline/create/{{order.id}}" *ngIf="order">Create New</a>
+    <table class="table table-striped table-sm" *ngIf="order">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Item</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Line total</th>
+                <th>Actions?</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let ol of order.orderLines">
+                <td>{{ol.id}}</td>
+                <td>{{ol.item?.name}}</td>
+                <td>{{ol.item?.price | currency}}</td>
+                <td>{{ol.quantity}}</td>
+                <td>{{ol.quantity * (ol.item === null ? 0 : ol.item.price) | currency}}</td>
+                <td>
+                    <a routerLink="/orderline/edit/{{ol.id}}">Change</a> | 
+                    <a (click)="remove(ol)" href="#">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>

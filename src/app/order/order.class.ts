@@ -10,7 +10,7 @@ export class Order{
     customerId: number = 0;
     customer: Customer | null = null;
     customerName!: string;
-    orderlines!: Orderline[];
+    orderLines!: Orderline[];
     
     
 }

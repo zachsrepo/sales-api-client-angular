@@ -3,6 +3,7 @@ import { Order } from '../order.class';
 import { SystemService } from 'src/app/system/system.service';
 import { OrderService } from '../order.service';
 import { ActivatedRoute } from '@angular/router';
+import { Orderline } from 'src/app/orderline/orderline.class';
 
 @Component({
   selector: 'app-order-lines',
@@ -20,6 +21,9 @@ export class OrderLinesComponent {
   ) {}
 
   review():void {
+
+  }
+  remove(orderline: Orderline): void {
     
   }
   ngOnInit(): void {
