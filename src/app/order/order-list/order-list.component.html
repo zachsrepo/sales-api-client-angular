@@ -8,17 +8,17 @@
     <table class="table table-striped table-sm">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Date</th>
-                <th>Description</th>
-                <th>Status</th>
-                <th>Total</th>
-                <th>Customer Name</th>
+                <th><button (click)="selectColumn('id')" class=" btn btn-link">Id</button></th>
+                <th><button (click)="selectColumn('date')" class="btn btn-link">Date</button></th>
+                <th><button (click)="selectColumn('description')" class="btn btn-link">Description</button></th>
+                <th><button (click)="selectColumn('status')" class="btn btn-link">Status</button></th>
+                <th><button (click)="selectColumn('total')" class="btn btn-link">Total</button></th>
+                <th><button (click)="selectColumn('customerName')" class="btn btn-link">Customer</button></th>
                 <th>Action?</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let o of orders">
+            <tr *ngFor="let o of orders | sort:sortColumn:sortAsc">
                 <td> {{o.id}}</td>
                 <td>{{o.date | date}}</td>
                 <td>{{o.description}}</td>
@@ -27,7 +27,8 @@
                 <td>{{o.customer?.name}}</td>
                 <td>
                     <a routerLink="/order/detail/{{o.id}}">Detail</a> | 
-                    <a routerLink="/order/change/{{o.id}}">Change</a>
+                    <a routerLink="/order/change/{{o.id}}">Change</a> |
+                    <button (click)="review(o)" class="btn btn-link">Review</button>
                 </td>
             </tr>
         </tbody>

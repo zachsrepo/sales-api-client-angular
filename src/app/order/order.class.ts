@@ -8,5 +8,6 @@ export class Order{
     status: string = "NEW";
     customerId: number = 0;
     customer: Customer | null = null;
+    customerName!: string;
     
 }

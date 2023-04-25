@@ -22,10 +22,10 @@ export class OrderChangeComponent {
   ){}
 
   save():void {
-    this.order.customerId = Number(this.order.customerId);
+    this.order.customerId = Number(this.order.customerId); // makes sure the FK is a number and not a string
     this.ordersvc.change(this.order, this.order.id).subscribe({
       next: (res) => {
-        console.debug("Order Created!");
+        console.debug("Order Updated!");
         this.router.navigateByUrl("/order/list");
       },
       error: (err) => {
